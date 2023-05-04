@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear Historia Clínica{% endblock %}
+
+{% block content %}
+  <h1>Crear Historia Clínica</h1>
+  <form method="post">
+    {% csrf_token %}
+    <label for="paciente_nombre">Nombre del paciente:</label>
+    <input type="text" id="paciente_nombre" name="paciente_nombre" required><br>
+  
+    <label for="paciente_apellido">Apellido del paciente:</label>
+    <input type="text" id="paciente_apellido" name="paciente_apellido" required><br>
+  
+    <label for="paciente_fecha_nacimiento">Fecha de nacimiento del paciente:</label>
+    <input type="date" id="paciente_fecha_nacimiento" name="paciente_fecha_nacimiento" required><br>
+  
+    <label for="paciente_dni">DNI del paciente:</label>
+    <input type="text" id="paciente_dni" name="paciente_dni" required><br>
+  
+    <label for="paciente_obra_social">Obra social del paciente:</label>
+    <input type="text" id="paciente_obra_social" name="paciente_obra_social" required><br>
+  
+    <label for="medico_nombre">Nombre del médico:</label>
+    <input type="text" id="medico_nombre" name="medico_nombre" required><br>
+  
+    <label for="medico_apellido">Apellido del médico:</label>
+    <input type="text" id="medico_apellido" name="medico_apellido" required><br>
+  
+    <label for="medico_especialidad">Especialidad del médico:</label>
+    <input type="text" id="medico_especialidad" name="medico_especialidad" required><br>
+  
+    <label for="medico_matricula">Matrícula del médico:</label>
+    <input type="text" id="medico_matricula" name="medico_matricula" required><br>
+  
+    <label for="fecha">Fecha de la consulta:</label>
+    <input type="date" id="fecha" name="fecha" required><br>
+  
+    <label for="descripcion">Descripción de la consulta:</label>
+    <textarea id="descripcion" name="descripcion" required></textarea><br>
+  
+    <input type="submit" value="Crear historia clínica">
+  </form>  
+{% endblock %}

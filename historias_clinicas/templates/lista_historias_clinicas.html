@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Historias clínicas</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Paciente</th>
+        <th>Fecha de creación</th> <!-- Nueva columna -->
+      </tr>
+    </thead>
+    <tbody>
+        {% for historia_clinica in historias_clinicas %}
+        <tr>
+          <td>{{ historia_clinica.id }}</td>
+          <td>{{ historia_clinica.paciente.nombre }} {{ historia_clinica.paciente.apellido }}</td>
+          <td>{{ historia_clinica.fecha_creacion }}</td>
+          <td>{{ historia_clinica.enfermedades }}</td>
+          <td>{{ historia_clinica.tratamientos }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
