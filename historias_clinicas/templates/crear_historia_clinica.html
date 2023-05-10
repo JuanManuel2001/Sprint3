@@ -1,44 +1,82 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Crear Historia Clínica</title>
+    <!-- Incluimos los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Crear Historia Clínica</h1>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="paciente_nombre">Nombre del paciente:</label>
+          <input type="text" class="form-control" id="paciente_nombre" name="paciente_nombre" required>
+        </div>
 
-{% block title %}Crear Historia Clínica{% endblock %}
+        <div class="form-group">
+          <label for="paciente_apellido">Apellido del paciente:</label>
+          <input type="text" class="form-control" id="paciente_apellido" name="paciente_apellido" required>
+        </div>
 
-{% block content %}
-  <h1>Crear Historia Clínica</h1>
-  <form method="post">
-    {% csrf_token %}
-    <label for="paciente_nombre">Nombre del paciente:</label>
-    <input type="text" id="paciente_nombre" name="paciente_nombre" required><br>
-  
-    <label for="paciente_apellido">Apellido del paciente:</label>
-    <input type="text" id="paciente_apellido" name="paciente_apellido" required><br>
-  
-    <label for="paciente_fecha_nacimiento">Fecha de nacimiento del paciente:</label>
-    <input type="date" id="paciente_fecha_nacimiento" name="paciente_fecha_nacimiento" required><br>
-  
-    <label for="paciente_dni">DNI del paciente:</label>
-    <input type="text" id="paciente_dni" name="paciente_dni" required><br>
-  
-    <label for="paciente_obra_social">Obra social del paciente:</label>
-    <input type="text" id="paciente_obra_social" name="paciente_obra_social" required><br>
-  
-    <label for="medico_nombre">Nombre del médico:</label>
-    <input type="text" id="medico_nombre" name="medico_nombre" required><br>
-  
-    <label for="medico_apellido">Apellido del médico:</label>
-    <input type="text" id="medico_apellido" name="medico_apellido" required><br>
-  
-    <label for="medico_especialidad">Especialidad del médico:</label>
-    <input type="text" id="medico_especialidad" name="medico_especialidad" required><br>
-  
-    <label for="medico_matricula">Matrícula del médico:</label>
-    <input type="text" id="medico_matricula" name="medico_matricula" required><br>
-  
-    <label for="fecha">Fecha de la consulta:</label>
-    <input type="date" id="fecha" name="fecha" required><br>
-  
-    <label for="descripcion">Descripción de la consulta:</label>
-    <textarea id="descripcion" name="descripcion" required></textarea><br>
-  
-    <input type="submit" value="Crear historia clínica">
-  </form>  
-{% endblock %}
+        <div class="form-group">
+          <label for="paciente_fecha_nacimiento">Fecha de nacimiento del paciente:</label>
+          <input type="date" class="form-control" id="paciente_fecha_nacimiento" name="paciente_fecha_nacimiento" required>
+        </div>
+
+        <div class="form-group">
+          <label for="paciente_dni">DNI del paciente:</label>
+          <input type="text" class="form-control" id="paciente_dni" name="paciente_dni" required>
+        </div>
+
+        <div class="form-group">
+          <label for="paciente_obra_social">Obra social del paciente:</label>
+          <input type="text" class="form-control" id="paciente_obra_social" name="paciente_obra_social" required>
+        </div>
+
+        <hr>
+
+        <div class="form-group">
+          <label for="medico_nombre">Nombre del médico:</label>
+          <input type="text" class="form-control" id="medico_nombre" name="medico_nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="medico_apellido">Apellido del médico:</label>
+          <input type="text" class="form-control" id="medico_apellido" name="medico_apellido" required>
+        </div>
+
+        <div class="form-group">
+          <label for="medico_especialidad">Especialidad del médico:</label>
+          <input type="text" class="form-control" id="medico_especialidad" name="medico_especialidad" required>
+        </div>
+
+        <div class="form-group">
+          <label for="medico_matricula">Matricula del médico:</label>
+          <input type="text" class="form-control" id="medico_matricula" name="medico_matricula" required>
+        </div>
+        <hr>
+
+        <div class="form-group">
+          <label for="fecha">Fecha de la consulta:</label>
+          <input type="date" class="form-control" id="fecha" name="fecha" required>
+        </div>
+
+        <div class="form-group">
+          <label for="descripcion">Descripcion de la consulta:</label>
+          <input type="text" class="form-control" id="descripcion" name="descripcion" required>
+        </div>
+
+        <input type="submit" value="Crear historia clínica">
+      </form>
+    </div>
+    <!-- Incluimos los scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNSB6t" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
