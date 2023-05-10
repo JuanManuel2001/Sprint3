@@ -3,6 +3,31 @@
 from django.shortcuts import redirect, render
 from django.views import View
 from .models import HistoriaClinica, Paciente, Medico
+from django.contrib.auth.views import LoginView
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
+from .forms import CustomUserCreationForm
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def profile(request):
+    return render(request, 'registration/profile.html')
+
+
+class CustomLoginView(LoginView):
+    template_name = 'registration/login.html'
+    redirect_authenticated_user = True
+
+    def get_success_url(self):
+        return reverse_lazy('crear_historia_clinica')
+
+class CustomUserCreationView(CreateView):
+    form_class = CustomUserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/register.html'
+
+
+
 
 
 class HistoriaClinicaCreateView(View):
